@@ -10,16 +10,16 @@
         android:id="@+id/tvStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="28dp"
         android:text="Uruchamianie HDMI za 3s..."
         android:textColor="#AAAAAA"
         android:textSize="22sp" />
 
     <Button
         android:id="@+id/btnHdmi"
-        android:layout_width="260dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/btn_selector"
         android:textColor="@color/btn_text_color"
         android:focusable="true"
@@ -28,12 +28,23 @@
 
     <Button
         android:id="@+id/btnStockLauncher"
-        android:layout_width="260dp"
-        android:layout_height="64dp"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/btn_selector"
         android:textColor="@color/btn_text_color"
         android:focusable="true"
         android:text="Menu Projektora"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnSetDefault"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/btn_text_color"
+        android:focusable="true"
+        android:text="Ustaw jako Domyślny Pulpit"
+        android:textSize="17sp" />
 
 </LinearLayout>
