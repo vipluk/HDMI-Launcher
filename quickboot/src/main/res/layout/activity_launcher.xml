@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Uruchamianie HDMI za 3s..."
+        android:textColor="#AAAAAA"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btnHdmi"
+        android:layout_width="260dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/btn_text_color"
+        android:focusable="true"
+        android:text="HDMI"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnStockLauncher"
+        android:layout_width="260dp"
+        android:layout_height="64dp"
+        android:background="@drawable/btn_selector"
+        android:textColor="@color/btn_text_color"
+        android:focusable="true"
+        android:text="Menu Projektora"
+        android:textSize="20sp" />
+
+</LinearLayout>

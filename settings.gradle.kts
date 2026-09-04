@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "HDMI-Launcher"
-include(":app")
+include(":app", ":quickboot")

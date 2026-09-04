@@ -67,14 +67,15 @@ Tested and designed for projectors running Android firmware based on Allwinner p
 
 ## Installation & Setup
 
-### 1. Choose & Install Your APK Flavor
-Two APK variants are provided in the [Releases](https://github.com/vipluk/HDMI-Launcher/releases) section:
+### 1. Choose & Install Your APK
+Three APK options are provided in the [Releases](https://github.com/vipluk/HDMI-Launcher/releases) section:
 
-- **`HDMI_Launcher.apk` (Instant)**: Immediately switches to HDMI upon launch. Best used as a standard desktop or dock shortcut for quick switching with your remote.
-- **`HDMI_Launcher-5s.apk` (5s Delayed)**: Waits 5 seconds before switching to HDMI. **Recommended for autostart setups (Launch-On-Boot)** to give Android and Allwinner video drivers enough time to fully stabilize after power-on before opening the HDMI feed.
+- **`HDMI_Launcher.apk` (Instant Shortcut)**: Immediately switches to HDMI upon launch. Best used as a standard home screen or dock shortcut for quick 1-click switching with your remote.
+- **`HDMI_Launcher-5s.apk` (5s Delayed Shortcut)**: Waits 5 seconds before switching to HDMI. Best paired with **Launch-On-Boot** if your projector needs a few moments after power-on to stabilize video decoders.
+- **`HDMI_QuickBoot.apk` (Dedicated Home Launcher)**: A minimalist, dedicated Home Screen replacement. On power-on, it shows a 3-second countdown and automatically switches to HDMI. If you press **any key on your remote**, the countdown immediately stops, giving you buttons to launch HDMI or open the stock **Menu Projektora** (`com.htc.htclauncherhighenglishd08`).
 
 > [!TIP]
-> Both versions can be installed side-by-side on the same projector without conflicts (the 5s version appears in your launcher as **HDMI (5s)**).
+> All versions have distinct application IDs and can be installed side-by-side without conflicts!
 
 1. Download your preferred APK from [Releases](https://github.com/vipluk/HDMI-Launcher/releases).
 2. Transfer the APK to your projector:
@@ -83,16 +84,24 @@ Two APK variants are provided in the [Releases](https://github.com/vipluk/HDMI-L
      ```bash
      adb connect <projector-ip>:5555
      adb install -r HDMI_Launcher.apk
-     # or for the 5s variant:
+     # or:
      adb install -r HDMI_Launcher-5s.apk
+     # or:
+     adb install -r HDMI_QuickBoot.apk
      ```
 
 ### 2. (Optional) Configure Automatic Boot to HDMI
-To automatically switch to HDMI every time the projector boots:
+
+#### Option A: Using HDMI QuickBoot (Recommended)
+1. Install `HDMI_QuickBoot.apk`.
+2. Press the **Home** button on your remote. Android will prompt you to select a default Home app.
+3. Select **HDMI QuickBoot** and choose **Always**.
+4. Every time you turn on your projector, it counts down 3s and boots directly into HDMI unless you interrupt it with your remote!
+
+#### Option B: Using Launch-On-Boot with HDMI Launcher
 1. Install [Launch-On-Boot](https://github.com/ITVlab/Launch-On-Boot).
 2. Open Launch-On-Boot, grant required permissions, and select **HDMI** (or **HDMI (5s)**) as the target application.
 3. Enable "Launch on boot".
-4. Power cycle your projector to verify it switches directly to HDMI!
 
 ---
 
@@ -107,7 +116,7 @@ Requirements:
 git clone https://github.com/vipluk/HDMI-Launcher.git
 cd HDMI-Launcher
 
-# Build both release APKs
+# Build all release APKs
 ./gradlew assembleRelease
 ```
 
@@ -115,6 +124,7 @@ The resulting binaries will be generated at:
 ```text
 app/build/outputs/apk/standard/release/HDMI_Launcher.apk
 app/build/outputs/apk/delayed5s/release/HDMI_Launcher-5s.apk
+quickboot/build/outputs/apk/release/HDMI_QuickBoot.apk
 ```
 
 ---
