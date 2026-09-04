@@ -14,7 +14,7 @@
 
 ---
 
-## 📽️ About
+## About
 
 Most budget Android projectors (including the **Magcubic HY320**, **Magcubic HY300**, **Transspeed**, **Hotack**, and other devices built on Allwinner chipsets such as the **Allwinner H713**) share a common Android firmware base supplied by Allwinner.
 
@@ -22,7 +22,7 @@ By default, switching to the HDMI input requires navigating through clumsy stock
 
 ---
 
-## 🎯 Primary Use Case: Automatic HDMI on Boot (Dedicated Display Mode)
+## Primary Use Case: Automatic HDMI on Boot (Dedicated Display Mode)
 
 The key motivation behind this app is turning your smart projector into a **hassle-free, dedicated HDMI monitor or TV screen**:
 
@@ -34,7 +34,7 @@ The key motivation behind this app is turning your smart projector into a **hass
 
 ---
 
-## ✨ Features
+## Features
 
 - **Instant HDMI Switching**: Directly triggers the projector's native HDMI video feed.
 - **Smart Fallback Mechanism**: Cycles through known Allwinner HDMI input receiver components:
@@ -46,7 +46,7 @@ The key motivation behind this app is turning your smart projector into a **hass
 
 ---
 
-## 🖼️ Application Graphics
+## Application Graphics
 
 | Android TV Leanback Banner (16:9) | Launcher App Icon |
 | :---: | :---: |
@@ -55,7 +55,7 @@ The key motivation behind this app is turning your smart projector into a **hass
 
 ---
 
-## 📺 Supported Devices
+## Supported Devices
 
 Tested and designed for projectors running Android firmware based on Allwinner platforms (such as the Allwinner H713 SoC):
 - **Magcubic**: HY320, HY300, HY300 Pro
@@ -65,7 +65,7 @@ Tested and designed for projectors running Android firmware based on Allwinner p
 
 ---
 
-## 📥 Installation & Setup
+## Installation & Setup
 
 ### 1. Install HDMI Launcher
 1. Download the latest `HDMI_Launcher.apk` from the [Releases](https://github.com/vipluk/HDMI-Launcher/releases) section.
@@ -86,7 +86,7 @@ To automatically switch to HDMI every time the projector boots:
 
 ---
 
-## 🛠️ Building from Source
+## Building from Source
 
 Requirements:
 - JDK 17
@@ -108,6 +108,6 @@ app/build/outputs/apk/release/HDMI_Launcher.apk
 
 ---
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
