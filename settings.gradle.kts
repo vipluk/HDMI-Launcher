@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "hdmi2"
+rootProject.name = "HDMI-Launcher"
 include(":app")
