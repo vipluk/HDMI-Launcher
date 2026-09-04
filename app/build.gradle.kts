@@ -12,6 +12,28 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        manifestPlaceholders["appLabel"] = "HDMI"
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    flavorDimensions += "mode"
+
+    productFlavors {
+        create("standard") {
+            dimension = "mode"
+            buildConfigField("long", "DELAY_MS", "0L")
+            manifestPlaceholders["appLabel"] = "HDMI"
+        }
+        create("delayed5s") {
+            dimension = "mode"
+            applicationIdSuffix = ".delay5s"
+            versionNameSuffix = "-5s"
+            buildConfigField("long", "DELAY_MS", "5000L")
+            manifestPlaceholders["appLabel"] = "HDMI (5s)"
+        }
     }
 
     buildTypes {
@@ -25,9 +47,14 @@ android {
     }
 
     applicationVariants.all {
+        val currentFlavor = flavorName
         outputs.all {
             val output = this as? com.android.build.gradle.internal.api.BaseVariantOutputImpl
-            output?.outputFileName = "HDMI_Launcher.apk"
+            if (currentFlavor == "delayed5s") {
+                output?.outputFileName = "HDMI_Launcher-5s.apk"
+            } else {
+                output?.outputFileName = "HDMI_Launcher.apk"
+            }
         }
     }
 

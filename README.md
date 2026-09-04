@@ -67,20 +67,30 @@ Tested and designed for projectors running Android firmware based on Allwinner p
 
 ## Installation & Setup
 
-### 1. Install HDMI Launcher
-1. Download the latest `HDMI_Launcher.apk` from the [Releases](https://github.com/vipluk/HDMI-Launcher/releases) section.
+### 1. Choose & Install Your APK Flavor
+Two APK variants are provided in the [Releases](https://github.com/vipluk/HDMI-Launcher/releases) section:
+
+- **`HDMI_Launcher.apk` (Instant)**: Immediately switches to HDMI upon launch. Best used as a standard desktop or dock shortcut for quick switching with your remote.
+- **`HDMI_Launcher-5s.apk` (5s Delayed)**: Waits 5 seconds before switching to HDMI. **Recommended for autostart setups (Launch-On-Boot)** to give Android and Allwinner video drivers enough time to fully stabilize after power-on before opening the HDMI feed.
+
+> [!TIP]
+> Both versions can be installed side-by-side on the same projector without conflicts (the 5s version appears in your launcher as **HDMI (5s)**).
+
+1. Download your preferred APK from [Releases](https://github.com/vipluk/HDMI-Launcher/releases).
 2. Transfer the APK to your projector:
-   - **USB Drive**: Copy `HDMI_Launcher.apk` to a USB flash drive, plug it into the projector, and install it via the file manager.
+   - **USB Drive**: Copy the APK to a USB flash drive, plug it into the projector, and install it via the file manager.
    - **ADB (Android Debug Bridge)**:
      ```bash
      adb connect <projector-ip>:5555
      adb install -r HDMI_Launcher.apk
+     # or for the 5s variant:
+     adb install -r HDMI_Launcher-5s.apk
      ```
 
 ### 2. (Optional) Configure Automatic Boot to HDMI
 To automatically switch to HDMI every time the projector boots:
 1. Install [Launch-On-Boot](https://github.com/ITVlab/Launch-On-Boot).
-2. Open Launch-On-Boot, grant required permissions, and select **HDMI** as the target application.
+2. Open Launch-On-Boot, grant required permissions, and select **HDMI** (or **HDMI (5s)**) as the target application.
 3. Enable "Launch on boot".
 4. Power cycle your projector to verify it switches directly to HDMI!
 
@@ -97,13 +107,14 @@ Requirements:
 git clone https://github.com/vipluk/HDMI-Launcher.git
 cd HDMI-Launcher
 
-# Build the release APK
+# Build both release APKs
 ./gradlew assembleRelease
 ```
 
-The resulting binary will be generated at:
+The resulting binaries will be generated at:
 ```text
-app/build/outputs/apk/release/HDMI_Launcher.apk
+app/build/outputs/apk/standard/release/HDMI_Launcher.apk
+app/build/outputs/apk/delayed5s/release/HDMI_Launcher-5s.apk
 ```
 
 ---

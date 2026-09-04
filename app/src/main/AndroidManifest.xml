@@ -8,7 +8,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:banner="@drawable/banner"
-        android:label="HDMI"
+        android:label="${appLabel}"
         android:theme="@android:style/Theme.Translucent.NoTitleBar">
 
         <activity
