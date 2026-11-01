@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <strong>A lightweight, zero-overhead Android application acting as a direct HDMI input shortcut for budget Android projectors powered by Allwinner SoCs.</strong>
+  <strong>A lightweight, zero-overhead Android application acting as a direct HDMI input shortcut and dedicated home launcher for budget Android projectors powered by Allwinner SoCs.</strong>
 </p>
 
 ---
@@ -19,8 +19,8 @@
 Most budget Android projectors boot into a cluttered Android home screen with no native setting to default directly to the HDMI input.
 
 **HDMI Launcher** turns your projector into a hassle-free, dedicated monitor or TV screen for PCs, PlayStation, Xbox, Nintendo Switch, or streaming boxes:
-- **HDMI QuickBoot (Dedicated Launcher)**: Replaces the stock home screen. Turns on the projector, counts down 3 seconds, and jumps straight into HDMI. Pressing any remote button interrupts the countdown and lets you enter settings.
-- **HDMI Launcher (1-Click Shortcut)**: Fast shortcut placed on your dock or home screen to trigger HDMI immediately without digging through manufacturer menus.
+- **HDMI Launcher (Dedicated Home Launcher)**: Replaces the stock home screen. Turns on the projector, counts down 3 seconds, and jumps straight into HDMI. Pressing any remote button interrupts the countdown and lets you enter settings.
+- **HDMI Shortcut (1-Click Shortcut)**: Fast shortcut placed on your dock or home screen to trigger HDMI immediately without navigating manufacturer menus.
 
 ---
 
@@ -57,9 +57,9 @@ Download your preferred APK from the [Releases](https://github.com/vipluk/HDMI-L
 
 | APK | Mode | Ideal For |
 | :--- | :--- | :--- |
-| **`HDMI_QuickBoot.apk`** | **Home Launcher** | **Recommended.** Makes the projector act like a monitor. Auto-switches to HDMI 3 seconds after boot (interruptible with remote). |
-| **`HDMI_Launcher.apk`** | **Instant Shortcut** | 1-click icon on your existing home screen or dock to jump into HDMI immediately. |
-| **`HDMI_Launcher-5s.apk`** | **Delayed Shortcut** | Waits 5 seconds before switching. Designed for 3rd-party tools (like *Launch-On-Boot*) if your hardware needs extra time to boot decoders. |
+| **`HDMI_Launcher.apk`** | **Home Launcher** | **Recommended.** Makes the projector act like a monitor. Auto-switches to HDMI 3 seconds after boot (interruptible with remote). |
+| **`HDMI_Shortcut.apk`** | **Instant Shortcut** | 1-click icon on your existing home screen or dock to jump into HDMI immediately. |
+| **`HDMI_Shortcut-5s.apk`** | **Delayed Shortcut** | Waits 5 seconds before switching. Designed for 3rd-party tools (like *Launch-On-Boot*) if your hardware needs extra time to boot decoders. |
 
 > [!TIP]
 > All versions use distinct package IDs and can be installed side-by-side without conflicts.
@@ -72,19 +72,19 @@ Download your preferred APK from the [Releases](https://github.com/vipluk/HDMI-L
 Transfer the chosen APK via USB drive or ADB:
 ```bash
 adb connect <projector-ip>:5555
-adb install -r HDMI_QuickBoot.apk
+adb install -r HDMI_Launcher.apk
 ```
 
 ### 2. Configure Boot Behavior
 
-#### Option A: Direct Boot with HDMI QuickBoot (Recommended)
-1. Install `HDMI_QuickBoot.apk`.
+#### Option A: Direct Boot with HDMI Launcher (Recommended)
+1. Install `HDMI_Launcher.apk`.
 2. Press the **Home** button on your remote.
-3. Select **HDMI QuickBoot** and choose **Always**.
+3. Select **HDMI Launcher** and choose **Always**.
 4. Upon every power-on, the projector will show a 3-second countdown and switch directly to HDMI. Pressing any button on your remote cancels the countdown and displays shortcuts to HDMI or projector settings.
 
-#### Option B: Using Launch-On-Boot (Alternative)
-1. Install `HDMI_Launcher.apk` (or `HDMI_Launcher-5s.apk`) along with [Launch-On-Boot](https://github.com/ITVlab/Launch-On-Boot).
+#### Option B: Using Launch-On-Boot with HDMI Shortcut (Alternative)
+1. Install `HDMI_Shortcut.apk` (or `HDMI_Shortcut-5s.apk`) along with [Launch-On-Boot](https://github.com/ITVlab/Launch-On-Boot).
 2. Open Launch-On-Boot and select **HDMI** as the startup application.
 3. Enable "Launch on boot".
 
@@ -106,9 +106,9 @@ cd HDMI-Launcher
 
 Generated APKs:
 ```text
-app/build/outputs/apk/standard/release/HDMI_Launcher.apk
-app/build/outputs/apk/delayed5s/release/HDMI_Launcher-5s.apk
-quickboot/build/outputs/apk/release/HDMI_QuickBoot.apk
+quickboot/build/outputs/apk/release/HDMI_Launcher.apk
+app/build/outputs/apk/standard/release/HDMI_Shortcut.apk
+app/build/outputs/apk/delayed5s/release/HDMI_Shortcut-5s.apk
 ```
 
 ---

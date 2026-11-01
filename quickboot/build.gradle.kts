@@ -10,8 +10,8 @@ android {
         applicationId = "com.vipluk.hdmiquickboot"
         minSdk = 21
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.0.1"
     }
 
     buildTypes {
@@ -27,7 +27,7 @@ android {
     applicationVariants.all {
         outputs.all {
             val output = this as? com.android.build.gradle.internal.api.BaseVariantOutputImpl
-            output?.outputFileName = "HDMI_QuickBoot.apk"
+            output?.outputFileName = "HDMI_Launcher.apk"
         }
     }
 

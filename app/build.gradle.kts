@@ -10,8 +10,8 @@ android {
         applicationId = "com.vipluk.hdmilauncher"
         minSdk = 21
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.0.1"
         manifestPlaceholders["appLabel"] = "HDMI"
     }
 
@@ -51,9 +51,9 @@ android {
         outputs.all {
             val output = this as? com.android.build.gradle.internal.api.BaseVariantOutputImpl
             if (currentFlavor == "delayed5s") {
-                output?.outputFileName = "HDMI_Launcher-5s.apk"
+                output?.outputFileName = "HDMI_Shortcut-5s.apk"
             } else {
-                output?.outputFileName = "HDMI_Launcher.apk"
+                output?.outputFileName = "HDMI_Shortcut.apk"
             }
         }
     }
